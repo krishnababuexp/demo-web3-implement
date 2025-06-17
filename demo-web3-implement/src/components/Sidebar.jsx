@@ -6,6 +6,7 @@ export default function Sidebar() {
   const links = [
     { to: "/", label: "Home", icon: <HomeIcon size={20} /> },
     { to: "/payment", label: "Payment", icon: <WalletIcon size={20} /> },
+    { to: "/nft", label: "Create NFT", icon: <WalletIcon size={20} /> },
   ];
 
   return (
