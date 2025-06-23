@@ -1,0 +1,4 @@
+# common files and folders
+
+node_modules
+.env

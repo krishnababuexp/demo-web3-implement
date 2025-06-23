@@ -1,3 +1,10 @@
+import { PinataSDK } from "pinata";
+
+const pinata = new PinataSDK({
+  pinataJwt: "",
+  pinataGateway: import.meta.env.VITE_GATEWAY_URL,
+});
+
 export async function uploadToPinata(name, description, image) {
   const formData = new FormData();
   formData.append("file", image);

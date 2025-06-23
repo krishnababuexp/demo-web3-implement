@@ -1,4 +1,4 @@
-import { BrowserProvider } from "ethers";
+import { BrowserProvider, ethers } from "ethers";
 
 const NETWORKS = {
   ethereum: {
@@ -123,5 +123,27 @@ export const getPhantomAccount = async () => {
   } catch (error) {
     console.error("Error connecting to Phantom:", error);
     return { account: null, network: null };
+  }
+};
+
+export const getPhantomProvider = async (networkKey = "SOL") => {
+  if (networkKey === "SOL") {
+    return window.solana;
+  } else if (networkKey === "ETH") {
+    const phantom = window.phantom?.ethereum;
+    if (!phantom) {
+      throw new Error("Phantom wallet with Ethereum support not found");
+      return;
+    }
+    // Request wallet connection
+    await phantom.request({ method: "eth_requestAccounts" });
+    // Create ethers provider
+    return new ethers.BrowserProvider(phantom);
+  } else if (networkKey === "POL") {
+    const phantom = window.phantom?.ethereum;
+  } else if (networkKey === "BTC") {
+    const phantom = window.phantom?.bitcoin;
+  } else {
+    throw new Error("Unsupported network for Phantom: " + networkKey);
   }
 };
