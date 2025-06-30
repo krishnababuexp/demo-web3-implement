@@ -17,12 +17,11 @@
     "solc": "^0.8.28"
   },
   "devDependencies": {
-    "hardhat": "^2.24.3",
     "@nomicfoundation/hardhat-ignition-ethers": "^0.15.9",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.14",
+    "hardhat": "^2.24.3",
     "hardhat-ethernal": "^3.3.0",
     "hardhat-gas-reporter": "^1.0.8"
   }
-
 }
-
